@@ -1,5 +1,14 @@
+# home.timglass.co.uk
+
+docker-compose build
+
+docker-compose up -d
+
+
 # openhab-alexa
 
+
+# proxy
 Based on https://miki725.github.io/docker/crypto/2017/01/29/docker+nginx+letsencrypt.html
 
 sudo docker run -it --rm \
