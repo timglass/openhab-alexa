@@ -2,6 +2,7 @@ import http from 'http';
 import express from 'express';
 import bodyParser from 'body-parser';
 import { log } from 'util';
+import { axios } from 'axios';
 
 let PORT = 8080;
 var config = { port: null };
@@ -34,7 +35,9 @@ app.post('/', (request, response) => {
     }
 
     const logMessage = "Sending HTTP GET with body '"+openhabReq.payload+"' to " + openhabReq.url
-    console.log(logMessage)
+    axios.post(openhabReq.url, openhabReq.payload)
+         .then(response => console.log(response))
+         .catch(err => console.log(err));
     response.send('Hello from Express! ' + logMessage)
 })
 
