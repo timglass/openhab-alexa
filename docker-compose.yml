@@ -12,3 +12,9 @@ services:
       - 80:80
       - 443:443
 
+  openhab-alexa:
+    build: ./openhab-alexa
+    container_name: openhab-alexa
+    ports:
+      - 8888:8080
+
