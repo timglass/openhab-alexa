@@ -7,7 +7,6 @@ RUN npm install --only=production
 
 COPY dist dist
 
-
 EXPOSE 8080
 
 CMD [ "node", "dist/index.js" ]

@@ -11,10 +11,12 @@ services:
     ports:
       - 80:80
       - 443:443
+    links:
+      - openhab-alexa
+    depends_on:
+      - openhab-alexa
 
   openhab-alexa:
     build: ./openhab-alexa
     container_name: openhab-alexa
-    ports:
-      - 8888:8080
 
