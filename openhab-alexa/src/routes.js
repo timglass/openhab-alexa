@@ -12,7 +12,7 @@ router.get('/', (request, response) => {
 })
 
 router.post('/', (request, response) => {
-    console.log(request.body.amount)
+    console.log(request.body)
     var alexaRequest = request.body
     var dimmerPercentage = 0
     /*if (alexaRequest.amount === "ON") {

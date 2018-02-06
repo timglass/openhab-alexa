@@ -4,9 +4,9 @@
   "description": "NodeJS server enabling Alexa to control devices from Openhab",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js --exec babel-node",
-    "build": "./node_modules/.bin/babel  ./src --experimental --source-maps-inline -d ./dist",
-    "serve": "node dist/index.js"
+    "start": "node dist/bundle.js",
+    "babel": "./node_modules/.bin/babel  ./src --experimental --source-maps-inline -d ./dist",
+    "build": "NODE_ENV=production && webpack --config webpack.config.js"
   },
   "author": "Tim Glass",
   "license": "ISC",
@@ -14,12 +14,14 @@
     "axios": "^0.17.1",
     "babel-preset-env": "^1.6.1",
     "body-parser": "^1.18.2",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "fs": "0.0.1-security"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "webpack": "^3.10.0"
   }
 }
