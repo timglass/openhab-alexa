@@ -2,9 +2,10 @@
 version: '3'
 
 services:
-  nginx:
+  nginx-proxy:
+    container_name: nginx-proxy
     build: ./proxy
-    container_name: nginx
+    image: titan:5000/nginx-proxy
     volumes:
       - ./certs:/etc/letsencrypt
       - ./certs-data:/data/letsencrypt
@@ -19,4 +20,6 @@ services:
   openhab-alexa:
     build: ./openhab-alexa
     container_name: openhab-alexa
-
+    image: titan:5000/openhab-alexa
+    ports:
+      - 8888:8080

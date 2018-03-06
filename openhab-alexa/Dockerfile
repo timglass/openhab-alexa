@@ -1,4 +1,5 @@
-FROM node:carbon
+#FROM node:carbon
+FROM arm32v7/node
 
 WORKDIR /usr/app/
 
