@@ -12,7 +12,6 @@ var config = { port: null };
 let app = express();
 app.server = http.createServer(app);
 
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
