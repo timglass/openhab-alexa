@@ -10,4 +10,4 @@ COPY dist dist
 
 EXPOSE 8080
 
-CMD [ "node", "dist/index.js" ]
+CMD [ "node", "dist/bundle.js" ]
