@@ -9,7 +9,7 @@ const brightnessRequestHandler = (alexaRequest) => {
         dimmerPercentage = alexaRequest.amount;
     }
     
-    return dimmerPercentage;
+    return dimmerPercentage.toString();
 }
 
 export default brightnessRequestHandler;
