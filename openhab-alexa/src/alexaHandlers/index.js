@@ -1,16 +1,14 @@
 import brightnessRequestHandler from './brightnessController'
-import colorRequestHandler from './colorController'
+import colorRequestHandler from './colourController'
 import powerRequestHandler from './powerController'
 
 const generateOpenHabRequestPayload = (alexaRequest) => {
-    const {namespace, value} = alexaRequest;
-    //console.log('Namespace - ' + namespace)
-    switch (namespace) {
-        case 'brightnessRequestHandler':
+    switch (alexaRequest.namespace) {
+        case 'BrightnessController':
             return brightnessRequestHandler(alexaRequest);
-        case 'powerRequestHandler':
+        case 'PowerController':
             return powerRequestHandler(alexaRequest);
-        case 'colorRequestHandler':
+        case 'ColorController':
             return colorRequestHandler(alexaRequest);
     }
 

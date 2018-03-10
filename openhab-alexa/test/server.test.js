@@ -28,7 +28,7 @@ describe('Alexa REST endpoint', function() {
         chai.request(server)
             .post(baseUrl + '/')
             .set('content-type', 'application/json')
-            .send({ namespace: 'powerRequestHandler', amount: 'ON'})
+            .send({ device: 'Kitchen_Lights_Dimmer', namespace: 'PowerController', amount: 'ON'})
             .end((err, res) => {                
                     res.should.have.status(200);
                     //res.body.should.be.a('object');

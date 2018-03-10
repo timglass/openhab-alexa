@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { log } from 'util';
 import generateOpenHabRequestPayload from './alexaHandlers'
+import lookupDevice from './deviceDatabase'
 import express from 'express'
 const router = express.Router();
 
@@ -15,13 +16,12 @@ router.get('/', (request, response) => {
 router.post('/', (request, response) => {
     //console.log(request.body)
     var alexaRequest = request.body
-    let requestPayload = generateOpenHabRequestPayload(alexaRequest);
-    //}
+    const determineDevice = lookupDevice(alexaRequest.device, alexaRequest.namespace)
+    const requestPayload = generateOpenHabRequestPayload(alexaRequest);
 
     if (requestPayload != null) {
         const openhabReq = {
-            url: "http://openhab:8080/rest/items/Kitchen_Light_Dimmer",
-            //url: "http://openhab:8080" + "/rest/items/" + alexaRequest.item,
+            url: "http://openhab:8080/rest/items/" + determineDevice,
             payload: requestPayload
         }
     
