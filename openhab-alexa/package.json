@@ -19,7 +19,7 @@
     "express": "^4.16.2",
     "lodash": "^4.17.19",
     "fs": "0.0.1-security",
-    "mocha": "6.1.4",
+    "mocha": "10.2.0",
     "sinon": "7.3.2"
   },
   "devDependencies": {
